@@ -1,0 +1,69 @@
+@import "../../node_modules/bootstrap/dist/css/bootstrap";
+
+// remove bg img
+
+.transparent-img {
+  mix-blend-mode: multiply; /* hoặc 'darken', 'screen' tùy theo nền */
+}
+
+// Main web
+
+// navbar
+.navbar-brand img {
+  width: 60px;
+}
+
+.btn-search-icon {
+  color: #fff;;
+}
+
+// header
+.main-header {
+    padding-top: 100px;
+}
+.header-input-search {
+    outline: none;
+    border: 1px solid #c3c3c3;
+}
+// site featured
+.feature-item img {
+    width: 50px;
+    height: auto;
+}
+// Subcribe
+.subscribe {
+    background: url('../img/subscribe.jpg') no-repeat center/cover;
+}
+.btn-subscribe-icon {
+    top: 8.6px;
+    left: 5px;
+}
+// footer
+.brand-icon img {
+    width: 40px;
+    height: 40px;
+}
+.blur-filter {
+    backdrop-filter: blur(8px);
+    background-color: #cccccc60;
+}
+
+// FAQ web
+// FAQ header
+.faq-header {
+    padding-top: 100px;
+}
+// FAQ list
+.btn-question-icon {
+    top: 8.6px;
+    left: 38px;
+}
+
+// Contact
+.contact-header {
+    padding-top: 100px;
+}
+
+.btn-contact-icon {
+    left: 8px;
+}

@@ -1,0 +1,324 @@
+Bootstrap 5.3
+-------------------------------------------------------
+Install:
+**Terminal > npm install bootstrap
+**Tạo index.scss > @import "../../node_modules/bootstrap/dist/css/bootstrap"; > watch scss
+
+-------------------------------------------------------
+Boostrap dùng box-sizing: borderbox
+=> nếu cần ghi đè thì đổi thành "content-box"
+
+rfs(): tính toán font chữ dựa trên chiều rộng màn
+rfs-value():
+rfs-fluid-value():
+rtl, ltr
+-------------------------------------------------------
+**Background
+	bg-gradient: nền chuyển màu
+	bg-primary/bg-danger/.... :màu nền
+Chỉnh cho css có màu riêng của mình
+	background-image: var(--bs-gradient);
+Background Opacity
+	bg-opacity-a 
+		a: 10/25/50/75 (%)
+	--bs-bg-opacity: value (ghi đè opa mong muốn)
+-------------------------------------------------------
+**Text Color
+	text-primary/text-danger/... : màu chữ
+Text Opacity
+	text-opacity-a 
+		a: 10/25/50/75 (%)
+	--bs-text-opacity: value (ghi đè opa mong muốn)
+-------------------------------------------------------
+**Spacing (Margin/Padding)
+m: margin
+p: padding
+	t: top
+	b: bottom
+	s: left (LTR) / right (RTL)
+	e: right (LTR)/ left (RTL)
+	x: left, right
+	y: top, bottom
+	-----------------
+	0: set về 0
+	1: 0.25 rem
+	2: 0.5 rem
+	3: 1 rem
+	4: 1.5 rem
+	5: 3 rem
+	auto: set auto
+=> VD: m-1/p-5/mb-2/ps-3....
+
+Margin âm: thêm "n" vào trước "value"
+=> VD: mx-n2 : -0.5rem
+-------------------------------------------------------
+**Border
+	border-top/bottom/start/end
+Border width
+	border-a
+		a: 0/1/2/3/4/5 (px)
+	border-0: xoá viền
+Border radius
+	rounded-top/bottom/start/end/circle(tròn)/pill(viên thuốc)
+	rounded-a
+		a: 0: unset
+		    1: 0.25 rem
+		    2: 0.375 rem
+		    3: 0.5 rem
+		    4: 1 rem
+		    5: 2 rem
+VD: rounded-bottom-1/rounded-end-circle/...
+-------------------------------------------------------
+**Breakpoints
+	none: <576px
+	sm: >= 576px (mobile)
+	md: >= 768px (tablet)
+	lg: >= 992px (laptop)
+	xl: >= 1200px (pc)
+	xxl: >= 1400px (pc cỡ lớn/tv)
+**Container
+	sm/md/lg/xl/xxl
+	fluid: 100% ở mọi breakpoints
+=> VD: container-fluid/...
+-------------------------------------------------------
+**Grid
+	col-a
+		a:1->12 (tương ứng với số cột mà ptu chiếm)
+Kết hợp "col" và "breakpoints" -> reponsive
+=> VD: col-sm-2/col-md-8/....
+
+grid>row>col 
+Trong col có thể có "row" mới
+-------------------------------------------------------
+**Gutter: khoảng cách giữa các cột trong Grid system
+	gx/gy/g-  a  (
+	a- 0: 0 rem
+	    1: 0.25 rem
+	    2: 0.5 rem
+	    3: 1 rem
+	    4: 1.5 rem
+	    5: 3 rem
+-------------------------------------------------------
+**Typography
+
+*h1 -> h6 (khi muốn thẻ "p/div/span" có cùng dạng với thẻ "h")
+
+*display-1 -> display-6 ( mỏng/ độ cao dòng cao hơn thẻ "h" )
+
+*lead: dùng cho đoạn văn là nội dung chính của bài (tóm tắt)
+
+*mark/small/del/ins/u/s/strong/em/b/i
+
+*blockquote: trích dẫn
+
+*figure/figcaption : dùng cho đa phương tiện (VD: hình ảnh/ nội dung của hình ảnh)
+-------------------------------------------------------
+**Li/Lu
+list-inline: dùng cho "lu" (ps-0, list-style:none)
+list-unstyled: bỏ dấu chấm đầu thẻ "li"
+list-inline-item: để các thẻ "li" nằm trên cùng 1 dòng
+
+list-group (lu) > list-group-item (li)
+list-group-item-action: đổi màu khi "hover"
+
+-------------------------------------------------------
+**Text
+*Aligment
+		text-center
+		text-end
+		text-start
+	"Có thể kết hợp với breakpoints"
+	VD: text-sm-center/...
+*Cắt văn bản & hiển thị "..." (ellipsis) (1 dòng)
+	text-truncate: (chỉ dùng được khi văn bản có "width" cố định)
+
+*Wrapping
+ 		 text-wrap
+		 text-nowrap
+		 text-break: xuống hàng(kể cả khi viết liền), không bị lòi ra khỏi giao diện
+
+
+		 text-lowercase
+		 text-uppercase
+		 text-capitalize
+
+*Font-size
+		 fs-1 -> fs-6 (có phụ thuộc vào viewport)
+
+*Font-weight
+		 fw-bold/fw-normal/....
+
+*Line-height
+		 lh-1: 1
+		 lh-sm: 1.25
+		 lh-base: 1.5
+		 lh-lg: 2
+1/1.25/1.5/2 sẽ nhân với "font-size" để ra lh
+
+*Monospace
+		 font-monospace
+Khoảng cách/độ rộng của các ký tự sẽ bằng nhau
+
+*Reset color
+		 text-reset
+Xoá bỏ màu hiện tại, thừa kế màu của thẻ "cha"
+
+*Text decoration
+		 text-decoration-underline
+		 text-decoration-none
+		 text-decoration-line-through
+-------------------------------------------------------
+**Position
+		 position-static/relative/...
+
+top/start/end/bottom - 0/50/100 
+(0/50/100 - 0%/50%/100%)
+
+translate-middle: dịch chuyển ptu đến giữa cả ngang/dọc
+
+=> VD: position-absolute top-50 translate-middle/...
+
+*Fixed/Sticky
+		 fixed-top/bottom
+		 sticky-top/bottom
+reponsive sticky: kết hợp với breakpoints
+=> VD: sticky-sm-top/...
+-------------------------------------------------------
+**Display
+	d- a
+	d - {breakpoints} - a
+	d - print - a
+
+		a: none/inline/inline-block/block/flex/inline-flex/.....
+
+VD: d-none d-sm-block/...
+----------
+*Table
+
+table>table-row>table-cell
+
+d-table: tạo bảng
+d-table-row: hàng trong bảng
+d-table-cell: ô trong hàng trong bảng
+-----------
+**Flex
+	d - {breakpoints} - flex/inline-flex
+
+*Direction
+	flex - {breakpoints} - row/column - (reverse)
+
+*Justify content
+	justify-content - {breakpoints} - start/end/center/between/around/evenly
+
+*Align items
+	align-items - {breakpoints} - start/end/center/baseline/stretch
+
+*Align self 
+	align-self - {breakpoints} - start/end/center/between/around/stretch
+
+*Align content
+	align-content - {breakpoints} - start/end/center/baseline/stretch
+
+*Fill 
+	flex - {breakpoints} - fill
+	( flex: flex-grow:1 flex-shrink:1 flex-basis:auto )
+
+*Grow, Shrink
+	flex - {breakpoints} - {grow/shrink} - {0/1}
+0: không thu nhỏ(shrink)/mở rộng(grow)
+1: có thu nhỏ/mở rộng
+
+*Wrap
+	flex - {breakpoints} -  {wrap/nowrap/wrap-reverse}
+
+*Order
+	order - {breakpoints} - {0 -> 5}
+	order - {breakpoints} - first : order = -1 (luôn đứng đầu)
+	order - {breakpoints} - last : order = 6 (luôn đứng cuối)
+-------------------------------------------------------
+*Float
+	float - {breakpoints} - {start/end/none}
+-------------------------------------------------------
+*Pointer events
+	pe-none
+	pe-auto
+		tabindex=-1
+		aria-disabled="true"
+-------------------------------------------------------
+*Link
+	link-opacity-{10/25/50/75/100}
+
+hover:
+	link-opacity-{10/25/50/75/100}-hover
+
+underline color
+	link-underline
+	link-underline-(primary/...)
+
+underline offset: khoảng cách từ chữ -> gạch chân (số càng cao thì càng xa)
+	link-offset-{1/2/3}
+
+underline opacity
+	link-underline-opacity-{0/10/25/50/75/100}
+
+hover variants
+	link-underline-opacity-{0/10/25/50/75/100}-hover
+
+color links
+	link-primary/....
+-------------------------------------------------------
+*Object fit	
+	object-fit-{breakpoints}-{contain/fill/cover/scale/none}
+-------------------------------------------------------
+*Overflow
+	overflow-{x/y}-{auto/hidden/visible/scroll}
+-------------------------------------------------------
+*Shadow
+	shadow
+	shadow-{none/sm/ /lg}
+-------------------------------------------------------
+*Sizing
+	{w/h}-{25/50/75/100/auto}
+	mw-100: max width
+	mh-100: max-height 100
+
+	min-vw-100: min-width 100vw
+	min-vh-100: min-height 100vh
+	vw-100: width 100vw
+	vh-100: height 100vh
+-------------------------------------------------------
+*Vertical align
+	align-{baseline/top/bottom/middle/text-top/text-bottom}
+-------------------------------------------------------
+*Visibility
+	visible
+	invisible
+-------------------------------------------------------
+*Z-index
+	z-{n1/0/1/2/3}
+-------------------------------------------------------
+-------------------------------------------------------
+-------------------------------------------------------
+*Navbar
+	navbar-expand - {breakpoints} : với vp nào thì nav sẽ mở rộng hiện full thông tin
+	navbar-brand : logo/tên website/cty...
+	navbar-toggler: nav menu btn
+	navbarNav: "ID"
+	
+*data-bs-theme = "light/dark" : các màu chữ cho nền có màu light/dark
+(viết cạnh class="")
+---------------
+*Offcanvas	
+	offcanvas: tạo menu hoặc các ptu trượt từ các cạnh của trang (start/end/top/bottom)
+	offcanvas-start/end/top/bottom
+	offcanvas - {breakpoints}
+	offcanvas-backdrop/title/body/header
+-------------------------------------------------------
+*Img
+	img-fluid 
+			{max-width: 100%
+			  height: auto}
+	img-thumbnail
+--------------------------------------------------------
+*input group
+	VD: dùng ở khung search -> ban đầu 2 phần search  và icon tách riêng, khi dùng thì nó sẽ dính liền để nhìn bớt xấu

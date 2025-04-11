@@ -1,0 +1,89 @@
+
+
+/* Keyframes */
+
+div {
+    width: 100px;
+    height: 100px;
+    background-color: antiquewhite;
+    animation-name: box;
+    animation-duration: 10s;
+    animation-delay: 2s; 
+    /* nếu đặt   'delay'   với giá trị âm '-N' thì ptu sẽ hoạt động như thể n 'ĐÃ' chạy được 'N's */
+
+/* ------------------------------- */
+
+    animation-iteration-count: infinite; 
+    /* Thiết lập số lần animation chạy, infinite là vô hạn  */
+
+/* ------------------------------- */
+
+    animation-direction: normal;
+    /* chỉ định hướng phát animation */
+
+    /* 
+    normal: default
+    reverse: ngược lại
+
+    alternate: anim sẽ chạy như normal rồi lại chạy ngược lại
+    alternate-reverse: anim sẽ chạy ngược rồi lại chạy như normal 
+    */
+
+/* ------------------------------- */
+
+    animation-timing-function: ease; 
+    /* giống với transition, là kiểu tốc độ của chuyển động */
+
+/* ------------------------------- */
+
+
+    animation-fill-mode: both;
+    /* xác định hành vi của ptu sau khi kết thúc anim */
+
+    /* 
+    none: không giữ lại thay đổi sau kết thúc anim
+    fowards: giữ lại trạng thái cuối của anim khi kết thúc
+    backwards: áp dụng thuộc tính từ keyframe đầu tiên ngay khi anim bắt đầu
+    both: kết hợp giữa 'backwards' và 'forwards' 
+     */
+
+/* ------------------------------- */
+
+
+     /* VIẾT TẮT:
+     VDU: animation: example 5s linear 2s infinite alternate 
+     */
+
+/* ------------------------------- */
+
+    position: relative;
+    /* dùng khi có cài thêm vị trí vào 'keyframes' */
+
+
+}
+
+/* -------------------------------------------- */
+
+/* form -> to , cơ bản nhất */
+
+/* @keyframes box {
+    form {background-color: rgb(248, 216, 174);}
+    to {background-color: rgb(82, 245, 190);}
+    
+} */
+
+/* -------------------------------------------------- */
+
+/* thay đổi các giá trị từ 0% -> 100% */
+
+/* có thể kết hợp với vị trí của ptu  */ 
+/* lúc này ptu chứa nó cần phải thêm   ''position: relavtive''   */
+
+@keyframes box {
+    0% {background-color: antiquewhite; left: 0px; top: 0px;}
+    25% {background-color: rgb(254, 225, 188); left: 200px; top: 0px;}
+    50% {background-color: rgb(255, 196, 119); left: 200px; top: 200px;}
+    75% {background-color: rgb(255, 165, 48); left: 0px; top: 200px;}
+    100% {background-color: rgb(253, 145, 3); left: 0px; top: 0px;}
+}
+

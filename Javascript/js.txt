@@ -1,0 +1,718 @@
+Javascript:
+
+---------------------------------------------------
+**Đặt tên biến:
+var tênbiến = 'value';
+var tênbiến = number;
+
+---------------------------------------------------
+**Các hàm built-in(được xây dựng sẵn)
+alert
+console
+confirm
+prompt
+setTimeout
+setInterval
+
+---------------------------------------------------
+- alert(var): in ra thông báo
+- console.log(var): in ra log
+- confirm(var): in ra hộp thoại xác nhận
+- prompt(var): in ra hộp thoại xác nhận mà user có thể nhập liệu
+- setTimeout(function() {}, mili giây): cho 1 đoạn code được chạy sau 1 khoảng thời gian mili giây
+- setInterval(function() {}, mili giây): cho 1 đoạn code chạy sau 1 tgian mili giây và lặp lại sau từng đó mili giây
+
+---------------------------------------------------
+**Toán tử trong Javascript
+Toán tử số học ( + - * / ) ( ** ; % ; ++ ; -- )
+Toán tử gán ( = 'value' ) ( += ; -= ; *= ; /= ; ** ; = )
+Toán tử so sánh ( >, < , == )
+Toán tử logic (&&)
+
+---------------------------------------------------
+- Toán tử so sánh
+VD: var a = 1; var b = 2
+	if (a == b) { alert('Đúng') }
+- Toán tử logic
+VD: var = 1; var b = 2
+	if (a > 0 && b>0) { alert('a&b lớn hơn 0') }
+
+---------------------------------------------------
+---------------------------------------------------
+// --------------------------------------
+Toán tử số học
+
+// **  : luỹ thừa / số mũ
+// %   : chia rồi chỉ lấy phần "dư"
+// ++  : tăng 1 giá trị số
+// --  : giảm 1 giá trị số
+
+
+NOTED:
+// Toán tử " ++ và -- " có 2 cách sử dụng là tiền tố / hậu tố
+// x++ tăng giá trị biến lên 1 và trả về giá trị trước khi tăng
+// ++x tăng giá trị biến lên 1 và trả về giá trị sau khi tăng
+// x-- giảm giá trị biến xuống 1 và trả về giá trị trước khi giảm
+// --x giảm giá trị biến xuống 1 và trả về giá trị sau khi giảmm
+
+VD: var number = 1
+
+console.log(number++); // tăng giá trị của 'a' lên 1, nhưng in ra giá trị cũ ( trước tăng )
+console.log(++number); // tăng giá trị của 'a' lên 1, in ra giá trị mới ( đã tăng )
+// Khi viết:  a++; --> console.log(a): in ra giá trị mới
+
+
+// --------------------------------------
+
+Toán tử gán
+
+// Toán Tử     Ví Dụ       Tương Đương
+// =           x = y       x = y
+// +=          x += y      x = x + y
+// -=          x -= y      x = x - y
+// *=          x *= y      x = x * y
+// /=          x /= y      x = x / y
+// **=         x **= y     x = x ** y  (luỹ thừa/ số mũ)
+
+// --------------------------------------
+
+Toán tử nối chuỗi ( khi 1 trong 2 biến trong toán tử là 'chữ' )
+
+VD: var name = 'An';
+    name += ' ';
+    name += 'Ha';
+
+    console.log(name)
+
+// --------------------------------------
+
+Toán tử so sánh
+// ==  : bằng ( không so sánh kiểu dữ liệu )
+// === : bằng ( so sánh kiểu dữ liệu )
+// !=  : khác ( không so sánh kiểu dữ liệu )
+// !== : khác ( so sánh kiểu dữ liệu )
+// >   : lớn hơn
+// <   : nhỏ hơn
+// >=  : lớn hơn hoặc bằng
+// <=  : nhỏ hơn hoặc bằng
+
+// ?   : toán tử 3 ngôi ( điều kiện ? giá trị đúng : giá trị sai )
+
+VD: var a = 1;
+
+    var b = 2;
+    var c = a > b ? 'a lớn hơn b' : 'a nhỏ hơn b';
+    console.log(c)
+    // kết quả: a nhỏ hơn b
+
+// --------------------------------------
+
+Toán tử logic
+// &&  : và ( AND )
+// ||  : hoặc ( OR )
+// !   : không ( NOT )
+// ??  : nếu biến đầu tiên là null hoặc undefined thì lấy biến thứ 2
+// ( Nullish Coalescing Operator )
+NOTED:
+Với toán tử hoặc (||), nếu xuất hiện ít nhất 1 vế bằng 'true' thì kết quả trả về sẽ là 'true'.
+Còn với toán tử và (&&), nếu xuất hiện ít nhất 1 vế bằng 'false' thì kết quả trả về sẽ là 'false'.
+--------------------
+
+VD: var a = 1;
+    var b = 2;
+    var c = 3;
+
+    if (a > b && a > c) {
+        console.log('a lớn nhất');
+    } else if (b > a && b > c) {
+        console.log('b lớn nhất');
+    } else {
+        console.log('c lớn nhất');
+    }
+    // kết quả: c lớn nhất
+
+VD: var a = 1;
+    var b = 2;
+    var c = 3;
+
+    if (a > b || a > c) {
+        console.log('a lớn hơn b hoặc c');
+    } else {
+        console.log('a không lớn hơn b và c');
+    }
+    // kết quả: a không lớn hơn b và
+
+VD: var a = 1;
+
+    if (!(a > 0)) {
+        console.log('ĐÚNG');
+    } else {
+        console.log('SAI');
+    }
+    // kết quả: SAI
+    "!" là toán tử phủ định ( NOT ) làm cho giá trị if/else bị đảo ngược lại
+// --------------------------------------
+
+---------------------------------------------------
+---------------------------------------------------
+Kiểu dữ liệu trong Javascript:
+1. Dữ liệu nguyên thuỷ (Primitive Data Types)
+    - Number : số nguyên, số thực (int, float)
+    - String : chuỗi (string)
+    - Boolean : kiểu dữ liệu logic (true/false)
+    - Undefined : kiểu dữ liệu chưa được xác định (undefined)
+    - Null : kiểu dữ liệu rỗng (null)
+    - Symbol : kiểu dữ liệu duy nhất (symbol) (ES6)
+
+2. Dữ liệu phức tạp (Complex Data Types)
+    - Object : kiểu dữ liệu đối tượng (object)
+    - Function : kiểu dữ liệu hàm (function)
+
+    - Array : kiểu dữ liệu mảng (array)
+    - Date : kiểu dữ liệu ngày tháng (date)
+
+---------------------------------------------------
+---------------------------------------------------
+- Kiểu dữ liệu Number (số nguyên, số thực)
+VD: var a = 1; // số nguyên
+    var b = 2.5; // số thực
+
+    console.log(a); // kết quả: 1
+    console.log(b); // kết quả: 2.5
+---------------------------------------------------
+- Kiểu dữ liệu Boolean (true/false)
+VD: var a = 1;
+    var b = 2;
+
+    var XXX = a > b;
+
+    console.log(XXX)
+    // kết quả: trả về (True / False)
+
+---------------------------------------------------
+- Kiểu dữ liệu Undefined (chưa được xác định)
+VD: var a; // chưa được gán giá trị
+    console.log(a) // kết quả: undefined
+
+---------------------------------------------------
+- Kiểu dữ liệu Null (rỗng)
+VD: var a = null; // đã được gán giá trị null
+    console.log(a) // kết quả: null
+
+---------------------------------------------------
+- Kiểu dữ liệu Symbol (duy nhất)
+VD: var a = Symbol('a'); // đã được gán giá trị symbol
+    console.log(a) // kết quả: Symbol(a)
+
+---------------------------------------------------
+- Kiểu dữ liệu function (hàm)
+// Hàm là một đoạn mã có thể được gọi lại nhiều lần trong chương trình
+VD: function myFunction() {
+        console.log('Hà An');
+    }
+
+    myFunction(); // gọi hàm myFunction
+    // kết quả: Hà An
+
+hoặc VD: const myFunction = function() {
+        console.log('Hà An');
+    }
+
+    myFunction(); // gọi hàm myFunction
+    // kết quả: Hà An
+
+---------------------------------------------------
+- Kiểu dữ liệu Object (đối tượng)
+VD: var myObject = {
+        name: 'Hà An',
+        age: 18
+    };
+
+    console.log(myObject.name); // kết quả: Hà An
+    console.log(myObject.age); // kết quả: 18
+    console.log(myObjec); // kết quả: {name: 'Hà An', age: 18}
+
+---------------------------------------------------
+- Kiểu dữ liệu Array (Mảng)
+VD: var myArray = [
+        'Hà An',
+        18,
+        true,
+        null,
+        undefined,
+        Symbol('a')
+    ];
+    console.log(myArray); // kết quả: ['Hà An', 18, true, null, undefined, Symbol(a)]
+---------------------------------------------------
+---------------------------------------------------
+- Câu lệnh điều kiện if
+
+Có 6 giá trị sau khi nhập vào if / else sẽ được chuyển về kiểu dữ liệu Boolean (False) còn lại thì đều là (True):
+
+// false
+// 0 (số 0)
+// "" (chuỗi rỗng)
+// null (giá trị rỗng)
+// undefined (giá trị chưa được xác định)
+// NaN (Not a Number - không phải là số)
+----------------------
+// Cú pháp:
+// if (điều kiện) {
+//     // code được thực thi nếu điều kiện đúng
+// } else {
+//     // code được thực thi nếu điều kiện sai
+// }
+
+VD: var a = 5;
+    var b = 10;
+
+    if (a > b) {
+        console.log('a lớn hơn b');
+    } else {
+        console.log('a nhỏ hơn hoặc bằng b');
+    }
+
+// Kết quả: a nhỏ hơn hoặc bằng b
+
+---------------------------------------------------
+---------------------------------------------------
+- Toán tử so sánh - bổ sung
+// === : so sánh giá trị và kiểu dữ liệu
+// !== : so sánh giá trị và kiểu dữ liệu
+
+VD: var a = 1;
+    var b = '1';
+
+    if (a === b) {
+        console.log('a và b bằng nhau');
+    } else {
+        console.log('a và b không bằng nhau');
+    }
+    // Kết quả: a và b không bằng nhau
+
+---------------------------------------------------
+---------------------------------------------------
+NOTED:
+ - !! là gì? Đơn giản thôi. Toán tử ! là toán tử not (phủ định) nên !! là 2 lần phủ định, mà 2 lần phủ định lại trở thành "khẳng định". Trong Javascript thì đây là một "tip" để convert (chuyển đổi) mọi kiểu dữ liệu khác sang Boolean.
+--------------------------------
+ - &&: Dừng khi gặp Falsy → trả nó. Không thì lấy cuối cùng.
+
+ - ||: Dừng khi gặp Truthy → trả nó. Không thì lấy cuối cùng.
+
+---------------------------------------------------
+---------------------------------------------------
+- Giới thiệu về vòng lặp for
+
+function writeLog() {
+    var myString = '';
+    for (var param of arguments) {
+        myString += `${param} - `;    //Dấu nháy ngược, ` ~ (backtick)
+    }
+    console.log(myString);
+    // kết quả: Log1 - Log2 - Log3 - Log4 - Log5 -
+}
+
+writeLog('Log1', 'Log2', 'Log3', 'Log4', 'Log5');
+
+
+---------------------------------------------------
+---------------------------------------------------
+- Function
+/Khi function đặt trùng tên
+=> function cuối cùng sẽ được gọi (ghi đè lên function trước đó)
+
+/Khai báo biến trong hàm
+=> biến đó chỉ có thể sử dụng trong hàm đó (biến cục bộ)
+
+/Định nghĩ hàm trong hàm
+=> hàm bên trong có thể sử dụng hàm bên ngoài (hàm cha) nhưng ngược lại thì không được (phải gọi hàm ở cả bên ngoài lẫn trong)
+
+---------------------------------------------------
+- Các loại function
+/Declaration function (hàm khai báo)
+VD: function myFunction() {}
+//Có thể gọi hàm trước khi khai báo hàm (hoisting)
+
+/Expression function (hàm biểu thức)
+VD: var myFunction = function() {}
+
+/Arrow function (hàm mũi tên) (ES6)
+VD: var myFunction = () => {}
+// Có thể gọi hàm trước khi khai báo hàm (hoisting) (nhưng không được khuyên dùng)
+// Arrow function không có từ khoá 'function' và không có từ khoá 'return' (nếu chỉ có 1 dòng code thì không cần dùng return)
+// Arrow function không có từ khoá 'this' (không thể sử dụng 'this' trong arrow function)
+// Arrow function không có từ khoá 'arguments' (không thể sử dụng 'arguments' trong arrow function)
+// Arrow function không có từ khoá 'new' (không thể sử dụng 'new' trong arrow function)
+// Arrow function không có từ khoá 'prototype' (không thể sử dụng 'prototype' trong arrow function)
+// Arrow function không có từ khoá 'super' (không thể sử dụng 'super' trong arrow function)
+// Arrow function không có từ khoá 'yield' (không thể sử dụng 'yield' trong arrow function)
+
+---------------------------------------------------
+
+- Return trong hàm
+// Return là từ khoá dùng để trả về giá trị của hàm (bất cứ dữ liệu gì)
+VD: function cong(a, b) {
+    return a + b; // trả về giá trị của phép cộng
+}
+
+var result = cong(2, 8); // gọi hàm cong và lưu kết quả vào biến result
+
+console.log(result); // in ra kết quả = 10
+
+/ Trong 1 hàm không return thì mặc định sẽ trả về undefined /
+
+---------------------------------------------------
+- Chuỗi trong Javascript
+// Chuỗi là một kiểu dữ liệu dùng để lưu trữ các ký tự (string)
+🔍 Dấu 'backslash' " ` "được dùng để xử lý các ký tự đặc biệt trong chuỗi, giúp tránh lỗi cú pháp.
+📏 Sử dụng thuộc tính ".length" để xác định số ký tự trong chuỗi, bao gồm cả dấu cách.
+📝 Tuân thủ quy tắc 80 ký tự cho mỗi dòng giúp code dễ đọc và bảo trì hơn.
+VD: const email = '123'
+
+/Template string (chuỗi mẫu) (ES6)
+// Sử dụng dấu nháy ngược (backtick) để tạo chuỗi mẫu
+// Có thể sử dụng biến trong chuỗi mẫu bằng cách sử dụng dấu $ và {} (dấu ngoặc nhọn)
+// Có thể sử dụng nhiều dòng trong chuỗi mẫu mà không cần dùng dấu \n (xuống dòng)
+VD: var name = 'Hà An';
+    var age = 18;
+
+    var myString = `Tên tôi là: ${name} và tôi ${age} tuổi`;
+    console.log(myString); // kết quả: Tên tôi là: Hà An và tôi 18 tuổi
+hoặc: / console.log(`Tên tôi là: ${name} và tôi ${age} tuổi`);
+
+---------------------------------------------------
+- LÀM VIỆC VỚI CHUỖI
+
+var myString = 'Hoc JS tai JS JS F8!';
+//Keyword: Js string methods
+1 ".length": trả về độ dài của chuỗi (số ký tự trong chuỗi)
+
+--------------
+2 ".indexOf": tìm vị trí của ký tự trong chuỗi (tìm kiếm chuỗi con trong chuỗi lớn hơn)
+ /VD: console.log(myString.indexOf('JS')); // kết quả: 4
+
+ /VD: console.log(myString.lastIndexOf('JS')); // kết quả: 12 (tìm từ cuối lên đầu)
+
+ /VD: console.log(myString.indexOf('JS', 6)); // kết quả: 11 (tìm từ vị trí thứ 5 trở đi)
+/Không tìm được thì trả về   -1
+--------------
+3 ".slice": cắt chuỗi (cắt chuỗi con trong chuỗi lớn hơn)
+ /VD: console.log(myString.slice(0, 3)); // kết quả: Hoc (cắt từ vị trí 0 đến vị trí 3)
+
+ /VD: console.log(myString.slice(4)); // kết quả: JS tai JS JS F8! (cắt từ vị trí 4 đến hết chuỗi)
+
+ /VD: console.log(myString.slice(-3)); // kết quả: F8! (cắt từ vị trí -3 đến hết chuỗi)
+
+ /VD: console.log(myString.slice(-3, -1)); // kết quả: F8 (cắt từ vị trí -3 đến vị trí -1)
+
+--------------
+4 ".replace": thay thế chuỗi (thay thế chuỗi con trong chuỗi lớn hơn)
+ /VD: console.log(myString.replace('JS', 'F8')); // kết quả: Hoc F8 tai JS JS F8! (thay thế chuỗi con đầu tiên)
+
+ /VD: console.log(myString.replace(/JS/g, 'F8')); // kết quả: Hoc F8 tai F8 F8! (thay thế tất cả chuỗi con)
+
+--------------
+5 ".toUpperCase": chuyển đổi chuỗi thành chữ hoa (chữ in hoa)
+ /VD: console.log(myString.toUpperCase()); // kết quả: HOC JS TAI JS JS F8! (chuyển đổi thành chữ hoa)
+
+--------------
+6 ".toLowerCase": chuyển đổi chuỗi thành chữ thường (chữ in thường)
+ /VD: console.log(myString.toLowerCase()); // kết quả: hoc js tai js js f8! (chuyển đổi thành chữ thường)
+
+--------------
+7 ".trim": loại bỏ khoảng trắng ở đầu và cuối chuỗi (loại bỏ khoảng trắng thừa)
+ /VD: console.log(myString.trim()); // kết quả: Hoc JS tai JS JS F8! (loại bỏ khoảng trắng thừa)
+
+--------------
+8 ".split": tách chuỗi thành mảng (tách chuỗi thành các phần tử trong mảng)
+ /VD: console.log(myString.split(', ')); // kết quả: ['Hoc JS tai JS JS F8!'] (tách chuỗi thành mảng)
+
+ /VD: console.log(myString.split(' ')); // kết quả: ['Hoc', 'JS', 'tai', 'JS', 'JS', 'F8!'] (tách chuỗi thành mảng)
+
+--------------
+9 ".charAt": lấy ký tự tại vị trí chỉ định trong chuỗi (lấy ký tự tại vị trí chỉ định trong chuỗi)
+const myString = 'Ha An'
+
+console.log(myString.charAt(5)); // kết quả: '' (vị trí 5 không tồn tại trong chuỗi)
+console.log(myString[5]); // kết quả: undefined (vị trí 5 không tồn tại trong chuỗi)
+
+--------------
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+- LÀM VIỆC VỚI SỐ (Number)
+//Keyword: Js number methods
+/1e6: 1000000 ( e tương đương với số "0" => e3 = "000")
+
+Number.isFinite(value):	Xác định xem giá trị đã cho có phải là số hữu hạn hay không. Trả về boolean
+Number.isInteger(value): Xác định xem giá trị đã cho có phải là số nguyên hay không. Trả về boolean
+Number.parseFloat(value): Chuyển đổi chuỗi đã cho thành một số dấu phẩy động
+Number.parseInt(value):	Chuyển đổi chuỗi đã cho thành một số nguyên
+*****Noted:
+Number.isNaN(value): Xác định xem giá trị đã cho có phải là NaN hay không. Trả về boolean (True) => thêm! để trả về (False)
+
+=>VD: thamso.isFinite(2 / 0);// false
+      console.log(isFinite(2 / 0)); // false
+----------------------------------
+ - To string
+ - to Fixed
+
+ =>VD: var numberObject = 1234.56789;
+
+ numberObject.toFixed(); // '1235'
+ numberObject.toFixed(1); // '1234.6'
+ numberObject.toFixed(6); // '1234.567890'
+
+ (11).toString();    // '11'
+ (18).toString();     // '18'
+ (17.3).toString();   // '17.3'
+--------------
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+- LÀM VIỆC VỚI ARRAY (mảng)
+var abc = [a, b, c, d, e]
+---------
+- Kiểm tra có phải Array hay không
+Array.isArray(value): xác định xem biến có phải là mảng hay không (trả về true/false)
+---------
+// Keyword: Js array methods
+1. .toString(): chuyển mảng -> chuỗi
+2. .join(): chuyển mảng -> chuỗi (có thể chỉ định dấu phân cách giữa các element trong mảng)
+3. .pop(): xóa element cuối cùng trong mảng và trả về element đã xóa
+4. .push(): thêm 1 hoặc nhiều element vào cuối mảng và trả về độ dài mới của mảng
+5. .shift(): xóa element đầu tiên trong mảng và trả về element đã xóa
+6. .unshift(): thêm 1 hoặc nhiều element vào đầu mảng và trả về độ dài mới của mảng
+7. .splice(): xóa hoặc thay thế các phần tử trong mảng (có thể thêm phần tử mới vào mảng)
+/VD: var abc = [1, 2, 3]
+/abc.splice(1, 1, "Dart") => // xóa 1 phần tử từ vị trí 1 và thêm "Dart" vào vị trí 1
+8. .slice(): cắt mảng (tạo ra một mảng mới từ một mảng đã cho)
+/VD: var abc = [1, 2, 3, 4, 5]
+/abc.slice(1, 3) => // cắt từ vị trí 1 đến vị trí 3 (không bao gồm vị trí 3)
+9. .concat(): nối 2 hoặc nhiều mảng lại với nhau và trả về mảng mới
+VD: array1.concat(array2)
+
+NOTED:
+return [...abc].pop('Elephant'): clone 1 mảng mới và elephant được thêm vào cuối mảng mới
+return abc.at(value): trả về giá trị tại vtri chọn
+--------------
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+- LÀM VIỆC VỚI Object (đối tượng)
+
+/Tạo object
+
+VD: var myInfo = {}
+//Thêm thuộc tính vào trong object myInfo đã tạo
+    myInfo.name/myInfo['name'] = 'Hà An'
+//xoá key
+    delete myInfo.name/myInfo['name']
+//Lấy giá trị của key trong object
+    console.log(myInfo.name/myInfo['name']) // kết quả: Hà An
+NOTED:
+dùng 'This' để tham chiếu đến object hiện tại
+VD: var myInfo = {
+        name: 'Hà An',
+        age: 18,
+        getName: function() {
+            return this.name;
+        }
+    }
+    console.log(myInfo.getName());
+    /HOẶC:
+    myInfo.getName();
+    this.getName(); // gọi hàm getName trong object myInfo
+
+/------------------------------
+- Object constructor (hàm tạo đối tượng)
+
+VD:
+
+function Person(name, age) {
+    this.name = name;
+    this.age = age;
+
+    this.getName = function() {
+        return this.name;
+        return `${this.name} - ${this.age}`;
+    }
+}
+
+var author = new Person('Hà An', 18); // tạo đối tượng mới từ hàm Person
+var user = new Person('Tuấn Bình', 15);
+
+author.title = 'Chia sẻ dạo'; // thêm thuộc tính title vào đối tượng author
+user.comment = 'hello everyone'; // thêm thuộc tính comment vào đối tượng user
+
+console.log(author.getName()); // kết quả: Hà An - 18
+console.log(user.getName()); // kết quả: Tuấn Bình - 15
+
+/------------------------------
+- Object prototype (đối tượng nguyên mẫu)
+
+VD: function Person(name, age) {
+    this.name = name;
+    this.age = age;
+
+    this.getName = function() {
+        return this.name;
+    }
+}
+----
+User.prototype.className = 'F8'; // thêm thuộc tính className vào đối tượng User
+User.prototype.getName = function() {
+    return this.className;
+}
+----
+var user = new Person('Hà An', 18);
+
+console.log(user.className); // kết quả: F8 (lấy thuộc tính className từ đối tượng User)
+/-----------------------------
+- Date (đối tượng date)
+// Keyword Js date object mozilla
+var date = new Date();
+
+var year = date.getFullYear();
+var month = date.getMonth() + 1;
+var day = date.getDate();
+/-----------------------------
+- Math (đối tượng Math)
+
+Math.PI: trả về số PI
+Math.round(): làm tròn giá trị (1,5 -> 2)
+Math.abs(): lấy giá trị tuyệt đổi
+Math.ceil(): làm tròn lên
+Math.floor(): làm tròn xuống
+Math.random(): lấy giá trị ngẫu nhiên
+ /VD:   Math.random() * 100; // lấy giá trị ngẫu nhiên tại 0 - 100
+    if (random < 5) { // lấy giá trị ngẫu nhiên < 5
+        console.log('thành công');
+    }
+Math.min(): lấy giá trị nhỏ nhất
+Math.max(): lấy giá trị lớn nhất
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+- Câu lệnh rẽ nhánh - If else
+
+if () {}: //nếu đkiện đúng
+else if: //nếu điều kiện trên sai thì chạy điều kiện này
+else: //nếu tất cả điều kiện trên sai
+
+- Câu lệnh rẽ nhánh - switch // ===
+
+switch () {
+    case value:
+        break; // thoát câu lệnh
+    default: // khoá câu lệnh, viết xuống cuối
+}
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+- Toán tử 3 ngôi - Ternary operator
+
+VD: var a = 10;
+    var b = 12;
+    var c = a > b ? a : b; // lấy giá trị tuyệt đổi giá trị a hay b
+    console.log(c); // kết quả: 12
+NOTED: "?" ngăn cách giữa điều kiện và kết quả trả về nếu điều kiện đúng (kết quả của if)
+       ":" ngăn cách giữa kết quả trả về với điều kiện đúng (if) & kết quả trả về còn lại (else)
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+- For loop - Vòng lặp for
+1. for - //lặp với đk đúng
+2. for/in - // lặp qua key của đối tượng (không cần 'giá trị điều kiện' và 'i++/i--')
+3. for/of - //lặp qua value của đối tượng
+4. while - //lặp khi đk đúng
+5. do/while - //lặp ít nhất 1 lần => sau đó lặp khi đkien đúng
+
+NOTE:
+- key: trong object thì là 'tên biến'
+       trong array thì là 'index/stt/i'
+---------
+- for
+
+for (var i = 0; i < 10; i++) {}
+
+//for có 3 giá trị trong (a; b; c)
+//a: gtri đầu tiên được in ra (chỉ chạy duy nhất 1 lần) VD: gán i = 0
+//b: điều kiện đúng ( cho gtri a )
+//c: gtri sau khi lặp (i++) => i = i + 1
+----------
+- for/in
+
+VD: var person = {
+    name: 'Hà An',
+    age: 18
+}
+for (var key in person) {
+    console.log(key + ': ' + person[key]);
+}
+// log ra "key" là tên biến trong object/là "'i'-index-số thứ tự" trong Array, "person[key]" là value của biến
+----------
+- for/of
+
+VD: var arr = [1, 2, 3, 4, 5];
+for (var value of arr) {
+    console.log(value);
+}
+// log ra value của mảng
+
+******NOTE: trong trường hợp là object
+
+for (var value of Object.keys(person) ) {} //key có 's' => keys
+for (var value of Object.values(person) ) {} //value có's' => values
+----------
+- while
+
+VD: var i = 0;
+
+while (i < 10) {
+    console.log(i);
+    i++;
+}
+----------
+- do/while
+
+VD: var i = 0;
+
+do {
+    console.log(i);
+    i++;
+} while (i < 10);
+----------
+break & continue in for loop
+
+for (var i = 0; i < 10; i++) {
+    if (i >= 5) {
+        break; // dừng lặp
+    }
+    console.log(i);
+}
+for (var i = 0; i < 10; i++) {
+    if (i%2 !== 0) {
+        continue; // bỏ qua vòng lặp, chỉ in ra những số chẵn
+    }
+    console.log(i);
+}
+-----------
+- for lồng nhau - Nested loop
+
+var arr = [
+    [1, 2],
+    [3, 4],
+    [5, 6]
+]
+for (var i = 0; i < arr.length; i++) {
+    for (var j = 0; j < arr[i].length; j++) {
+        console.log(arr[i][j]);
+    }
+} //Ans: 1, 2, 3, 4, 5, 6 
+*/
+
+
+

@@ -1,0 +1,122 @@
+:root {
+    --primary-color: #1d3abb;
+    --white-color: #fff;
+    --black-color: #000;
+    --gray-color: rgba(187, 187, 187, 1);
+    --text-color: rgba(0, 0, 0, 1);
+    --text-title-color: rgba(32, 42, 86, 1);
+    --text-card-color: rgba(68, 68, 68, 1);
+    --text-fb-color: rgba(29, 58, 187, 1);
+    --text-linkedin-color: rgba(75, 154, 246, 1);
+    --text-twitter-color: rgba(42, 181, 241, 1);
+    --text-instagram-color: rgba(255, 193, 7, 1);
+    --border-color: rgba(238, 238, 238, 1);
+    --bg-color: #fffaf5;
+    --box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.1);
+
+    --header-height: 80px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+}
+
+.px-38px {
+    padding-left: 38px !important;
+    padding-right: 38px !important;
+}
+
+/* Header */
+
+/* Btn Trial */
+.btn__trial {
+    margin: 0;
+}
+
+.btn__trial-link {
+    text-decoration: none;
+    color: var(--white-color);
+    display: block;
+    width: 130px;
+    height: 40px;
+    background-color: var(--primary-color);
+    border-radius: 20px;
+    position: relative;
+}
+
+.btn__trial-text {
+    position: absolute;
+    left: 31px;
+    top: 13px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.4rem;
+
+}
+
+.btn__trial-icon {
+    font-size: 1.25rem;
+    padding-left: 6px;
+}
+
+/* End btn Trial */
+
+/* Body content - logo */
+
+.body__card-logo-word {
+    background: linear-gradient(rgba(255, 224, 133, 1), rgba(255, 193, 7, 1));
+    border: 1px solid rgba(255, 193, 7, 1);
+}
+
+.body__card-logo-robot {
+    background: linear-gradient(rgba(149, 231, 216, 1), rgba(122, 221, 203, 1));
+    border: 1px solid rgba(122, 221, 203, 1);
+}
+
+.body__card-logo-connect {
+    background: linear-gradient(rgba(243, 245, 255, 1), rgba(198, 207, 246, 1));
+    border: 1px solid rgba(198, 207, 246, 1);
+}
+
+.body__card-logo-price {
+    background: linear-gradient(rgba(237, 148, 14, 1), rgba(237, 101, 14, 1));
+    border: 1px solid rgba(237, 101, 14, 1);
+}
+
+.body__card-logo-support {
+    background: linear-gradient(rgba(61, 74, 133, 1), rgba(32, 42, 86, 1));
+    border: 1px solid rgba(32, 42, 86, 1);
+}
+
+.body__card-logo-img {
+    position: absolute;
+    top: 32%;
+    left: 20%;
+}
+
+/* Text color Socials */
+
+.facebook-text__color {
+    color: var(--text-fb-color);
+}
+
+.linkedin-text__color {
+    color: var(--text-linkedin-color);
+}
+
+.twitter-text__color {
+    color: var(--text-twitter-color);
+}
+
+.instagram-text__color {
+    color: var(--text-instagram-color);
+}

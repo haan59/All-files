@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dự án dùng bootstrap</title>
+    <link rel="stylesheet" href="../CSS/index.css" />
+    <link
+      rel="stylesheet"
+      href="../Font/fontawesome-free-6.7.2-web/css/all.min.css"
+    />
+  </head>
+  <body class="bg-light pt-5">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-light border-bottom small fixed-top">
+      <div class="container">
+        <!-- navbar brand -->
+        <a class="navbar-brand" href="#">
+          <img
+            src="/Shopee Demo/assets/img/Logo Myan.png"
+            alt="Myan"
+            class="transparent-img"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <!-- Menu items -->
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./index.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">Course</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="./faq.html">FAQ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="./contact.html"
+                >Contact</a
+              >
+            </li>
+          </ul>
+          <!-- Btn Sign in , Log in -->
+          <div
+            class="me-1 mb-2 mb-lg-0 d-flex flex-column flex-md-row gap-1 w-100 justify-content-lg-end"
+          >
+            <a
+              href="#!"
+              class="btn btn-danger btn-sm d-inline-flex justify-content-center align-items-center"
+            >
+              <i class="fa-regular fa-user-plus me-2"></i>
+              Sign-up for free
+            </a>
+            <a
+              href="#!"
+              class="btn btn-warning btn-sm d-inline-flex justify-content-center align-items-center"
+            >
+              <i class="fa-regular fa-right-to-bracket me-2"></i>
+              Login
+            </a>
+          </div>
+          <!-- Form search -->
+          <form class="d-flex" role="search">
+            <input
+              class="form-control-sm me-2 me-lg-1 pe-md-2 flex-grow-1 flex-md-grow-0"
+              type="search"
+              placeholder="Search for..."
+              aria-label="Search"
+            />
+            <button class="btn btn-success btn-sm" type="submit">
+              <i
+                class="fa-duotone fa-solid fa-magnifying-glass btn-search-icon"
+              ></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Contact -->
+    <div class="contact-content py-5 border-bottom">
+      <div class="container">
+        <div class="row align-items-center gx-md-5 pt-3">
+          <div class="col-md-12">
+            <div class="breadcrumb-holder">
+              <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+                <ol class="breadcrumb border rounded-pill d-inline-flex align-items-center px-3 py-1">
+                  <li class="breadcrumb-item">
+                    <a href="./index.html" class="text-decoration-none small">Home</a>
+                  </li>
+                  <li class="breadcrumb-item active small" aria-current="page">
+                    Contact
+                  </li>
+                </ol>
+              </nav>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-md-6 mt-5 mt-md-0 text-center">
+              <div>
+                <h1 class="fs-3 fw-light">
+                  Lorem ipsum dolor sit amet consectetur.
+                </h1>
+                <p class="fs-6 small fw-normal text-secondary">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Provident quia natus amet! Amet reiciendis alias perspiciatis
+                  vel, nostrum officia iste illum fugiat distinctio tenetur
+                  molestiae incidunt repellat quisquam ratione vero!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row gx-md-5 my-3">
+          <div class="col-md-4 mb-4 mb-md-0">
+            <div class="card text-center">
+              <div class="card-header">F.A.Q</div>
+              <div class="card-body p-5">
+                <p class="m-0 small">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Molestias porro dolorum quibusdam quisquam consequatur
+                </p>
+              </div>
+              <div class="card-footer">
+                <a
+                  class="btn btn-success btn-sm d-inline-flex align-items-center position-relative ps-4"
+                  href="./faq.html"
+                >
+                  <i
+                    class="fa-regular fa-question btn-contact-icon me-1 pe-1 position-absolute"
+                  ></i>
+                  See FAQ's
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4 mb-md-0">
+            <div class="card text-center">
+              <div class="card-header">Regarding the course</div>
+              <div class="card-body p-5">
+                <p class="m-0 small">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Molestias porro dolorum quibusdam quisquam consequatur
+                </p>
+              </div>
+              <div class="card-footer">
+                <button
+                  class="btn btn-success btn-sm d-inline-flex align-items-center position-relative ps-4"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal"
+                >
+                  <i
+                    class="fa-regular fa-circle-question btn-contact-icon me-1 pe-1 position-absolute"
+                  ></i>
+                  Get Help
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4 mb-md-0">
+            <div class="card text-center">
+              <div class="card-header">Freelance Project</div>
+              <div class="card-body p-5">
+                <p class="m-0 small">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Molestias porro dolorum quibusdam quisquam consequatur
+                </p>
+              </div>
+              <div class="card-footer">
+                <a
+                  class="btn btn-success btn-sm d-inline-flex align-items-center position-relative ps-4"
+                  href="!"
+                >
+                  <i
+                    class="fa-regular fa-paper-plane btn-contact-icon me-1 pe-1 position-absolute"
+                  ></i>
+                  Send Request
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header bg-black">
+            <h1 class="modal-title fs-5 text-white" id="exampleModalLabel">Get Help</h1>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body px-1">
+            <div class="container">
+                <form action="">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="mb-2">
+                        <input placeholder="First Name" type="text" class="form-control form-control-sm">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="mb-2">
+                        <input placeholder="Last Name" type="text" class="form-control form-control-sm">
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="mb-2">
+                        <input placeholder="Subject" type="text" class="form-control form-control-sm">
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="mb-2">
+                        <input placeholder="Message" type="email" class="form-control form-control-sm">
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="mb-2">
+                        <textarea rows="5" placeholder="Question in detail" type="text" class="form-control form-control-sm"></textarea>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="mb-2">
+                        <button class="btn btn-success btn-sm d-inline-flex align-items-center justify-content-center w-100" type="submit">
+                          <i class="fa-regular fa-question me-1 pe-1"></i>
+                          Post Question
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Subscribe -->
+    <div class="subscribe py-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-4">
+            <div class="text-center mb-3 mb-md-0">
+              <h5 class="text-white text-md-end fs-4 fw-light">
+                Subcribe for newsletter
+              </h5>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <!-- form subscribe -->
+            <form class="input-group" role="email">
+              <input
+                type="email"
+                class="form-control form-control-sm"
+                placeholder="Your email"
+                aria-label="Search"
+              />
+              <button
+                class="btn btn-success btn-sm d-inline-flex align-items-center position-relative ps-4"
+                type="submit"
+              >
+                <i
+                  class="fa-solid fa-envelope btn-subscribe-icon me-1 pe-1 position-absolute"
+                ></i>
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- main footer -->
+    <footer class="text-bg-dark py-5">
+      <div class="container">
+        <div class="row">
+          <div
+            class="col-md-3 d-inline-flex justify-content-between d-md-block"
+          >
+            <div class="brand-icon mb-2">
+              <img
+                src="/Shopee Demo/assets/img/Logo Myan.png"
+                alt="logo"
+                class="transparent-img"
+              />
+            </div>
+            <address class="small text-secondary">
+              Jayanagar, Bangalore,<br />
+              Karnataka, India.<br />
+              560011
+            </address>
+            <p class="small text-secondary">contact@tuhoc.cc</p>
+          </div>
+          <div class="col-md-2 col-6 d-flex justify-content-evenly d-md-block">
+            <div>
+              <h6>Main menu</h6>
+              <ul class="list-unstyled">
+                <li>
+                  <a class="text-decoration-none text-secondary small" href=""
+                    >Link item 1</a
+                  >
+                </li>
+                <li>
+                  <a class="text-decoration-none text-secondary small" href=""
+                    >Link item 2</a
+                  >
+                </li>
+                <li>
+                  <a class="text-decoration-none text-secondary small" href=""
+                    >Link item 3</a
+                  >
+                </li>
+                <li>
+                  <a class="text-decoration-none text-secondary small" href=""
+                    >Link item 4</a
+                  >
+                </li>
+                <li>
+                  <a class="text-decoration-none text-secondary small" href=""
+                    >Link item 5</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-2 col-6 d-flex justify-content-evenly d-md-block">
+            <div>
+              <h6>Misc</h6>
+              <ul class="list-unstyled">
+                <li>
+                  <a class="text-decoration-none text-secondary small" href=""
+                    >Link item 1</a
+                  >
+                </li>
+                <li>
+                  <a class="text-decoration-none text-secondary small" href=""
+                    >Link item 2</a
+                  >
+                </li>
+                <li>
+                  <a class="text-decoration-none text-secondary small" href=""
+                    >Link item 3</a
+                  >
+                </li>
+                <li>
+                  <a class="text-decoration-none text-secondary small" href=""
+                    >Link item 4</a
+                  >
+                </li>
+                <li>
+                  <a class="text-decoration-none text-secondary small" href=""
+                    >Link item 5</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-5 d-flex justify-content-center d-md-block">
+            <div>
+              <h6>Follow us</h6>
+              <div>
+                <a
+                  href="#!"
+                  class="btn btn-primary btn-sm px-md-3 rounded-pill d-inline-flex align-items-center mb-2"
+                >
+                  <i class="fa-brands fa-facebook-f"></i>
+                  <span class="ms-2 d-md-block d-none">Facebook</span>
+                </a>
+                <a
+                  href="#!"
+                  class="btn btn-info btn-sm px-md-3 rounded-pill d-inline-flex align-items-center mb-2 text-white"
+                >
+                  <i class="fa-brands fa-twitter"></i>
+                  <span class="ms-2 d-md-block d-none">Twitter</span>
+                </a>
+                <a
+                  href="#!"
+                  class="btn btn-danger btn-sm px-md-3 rounded-pill d-inline-flex align-items-center mb-2"
+                >
+                  <i class="fa-brands fa-youtube"></i>
+                  <span class="ms-2 d-md-block d-none">Youtube</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- copyright -->
+    <div class="bg-black py-3 border border-2 border-black">
+      <div class="container">
+        <div class="row text-center small">
+          <p class="m-0 small text-white">
+            Copyright © 2030. Haan59.work@gmail.com
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile Padding -->
+    <div class="pt-5 pb-4 bg-black d-md-none"></div>
+
+    <!-- Sticky Footer -->
+    <div
+      class="d-md-none d-flex justify-content-center align-items-center py-3 fixed-bottom blur-filter"
+    >
+      <a
+        href="#!"
+        class="btn btn-warning btn-sm fw-bold rounded-pill d-inline-flex justify-content-center align-items-center px-3"
+      >
+        <i class="fa-regular fa-user-plus me-2"></i>
+        Sign-up for Free
+      </a>
+    </div>
+
+
+    <!-- Table
+    <div class="d-table m-3">
+      <div class="d-table-row">
+        <div class="d-table-cell p-2 ">Số thứ tự</div>
+        <div class="d-table-cell p-2 ">Name</div>
+        <div class="d-table-cell p-2 ">SDT</div>
+      </div>
+      <div class="d-table-row">
+        <div class="d-table-cell p-2 ">1</div>
+        <div class="d-table-cell p-2 ">Nguyễn Văn A</div>
+        <div class="d-table-cell p-2 ">08xxxx</div>
+      </div>
+      <div class="d-table-row">
+        <div class="d-table-cell p-2 ">2</div>
+        <div class="d-table-cell p-2 ">Nguyễn Văn B</div>
+        <div class="d-table-cell p-2 ">09xxxx</div>
+      </div>
+    </div> -->
+  
+    <!-- JS Bootstrap -->
+    <script src="../../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

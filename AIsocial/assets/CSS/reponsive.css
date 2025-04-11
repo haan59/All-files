@@ -1,0 +1,127 @@
+/*  Mobile & Tablet */
+@media (max-width: 1023px) {
+    .hide-on-mobile-tablet {
+        display: none;
+    }
+}
+
+/*  Tablet */
+@media (min-width:740px) and (max-width: 1023px) {
+    .hide-on-mobile-tablet {
+        display: none;
+    }
+    /* Navbar */
+    .header__logo {
+        margin: 0 4px;
+        padding: 0;
+    }
+    .header__logo-img {
+        width: 80px;
+    }
+    .header__btn-link {
+        width: 100px;
+        height: 40px;
+    }
+    .header__btn-text {
+        left: 16px;
+        font-size: 1.2rem;
+    }
+    .btn__trial-icon {
+        font-size: 1.1rem;
+    }
+    .header__solution {
+        right: -72px;
+    }
+    .header__navbar-user {
+        margin: 0 4px;
+    }
+    .header__navbar-item-icon {
+        position: absolute;
+        top: 44%;
+    }
+    .header__navbar-list:last-child .header__navbar-item:last-child {
+        padding: 20px 0;
+        margin: 0
+    }
+    .header__navbar-globe-icon {
+        margin-left: 2px;
+    }
+    .header__navbar-list:nth-child(2) .header__navbar-item:first-child::after {
+        top: 33px;
+    }
+    /* main header */
+    .main__header::after {
+        width: 180px;
+        height: 180px;
+        top: 43%;
+        left: -3%;
+    }
+    .header-title,
+    .section__sample {
+        margin: 30px 0;
+    }
+    .section__sample::before {
+        top: -116px;
+        right: 5px;
+        height: 460px;
+        width: 550px;
+    }
+    .section__sample::after {
+        top: -25px;
+        left: -35px;
+    }
+    .main__header-arrow-down {
+        width: 50px;
+        height: 50px;
+        bottom: -27px;
+        left: 47%;
+    }
+    .main_header-arrow-down-icon {
+        top: 10%;
+        left: 23%;
+    }
+    /* main footer */
+    .section__social-link {
+        padding: 0;
+    }
+    .section__social-link-img {
+        max-width: 135px;
+        max-height: 35px;
+    }
+    /* main faq */
+    .section__faq-title,
+    .section__faq-content {
+        width: 100%;
+    }
+    .section__faq-title {
+        margin-bottom: 30px;
+    }
+    .faq-title__secondary {
+        max-width: none;
+    }
+    .faq-content__link {
+        width: 100%;
+    }
+    /* Footer */
+    .footer-content__about {
+        max-width: none;
+        margin-bottom: 20px;
+    }
+    .footer-content__info {
+        min-width: 265px;
+    }
+    .footer-content__item-link {
+        padding-left: 0;
+    }
+    .footer-bottom__about-info,
+    .footer-bottom__extend {
+        min-width: 260px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 739px) {
+    .hide-on-mobile {
+        display: none;
+    }
+}
