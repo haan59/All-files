@@ -477,24 +477,43 @@ var abc = [a, b, c, d, e]
 Array.isArray(value): xác định xem biến có phải là mảng hay không (trả về true/false)
 ---------
 // Keyword: Js array methods
-1. .toString(): chuyển mảng -> chuỗi
-2. .join(): chuyển mảng -> chuỗi (có thể chỉ định dấu phân cách giữa các element trong mảng)
-3. .pop(): xóa element cuối cùng trong mảng và trả về element đã xóa
-4. .push(): thêm 1 hoặc nhiều element vào cuối mảng và trả về độ dài mới của mảng
-5. .shift(): xóa element đầu tiên trong mảng và trả về element đã xóa
-6. .unshift(): thêm 1 hoặc nhiều element vào đầu mảng và trả về độ dài mới của mảng
-7. .splice(): xóa hoặc thay thế các phần tử trong mảng (có thể thêm phần tử mới vào mảng)
+*. .length: //trả về độ dài mảng
+*. .at: //trả về giá trị tại vtri chọn //số 'âm' sẽ đi ngược từ cuối mảng
+1. .toString(): //chuyển mảng -> chuỗi
+2. .join(): //chuyển mảng -> chuỗi (có thể chỉ định dấu phân cách giữa các element trong mảng)
+3. .pop(): //xóa element cuối cùng trong mảng và trả về element đã xóa
+4. .push(): //thêm 1 hoặc nhiều element vào cuối mảng và trả về độ dài mới của mảng
+5. .shift(): //xóa element đầu tiên trong mảng và trả về element đã xóa
+6. .unshift(): //thêm 1 hoặc nhiều element vào đầu mảng và trả về độ dài mới của mảng
+7. .splice(): //xóa hoặc thay thế các phần tử trong mảng (có thể thêm phần tử mới vào mảng)
 /VD: var abc = [1, 2, 3]
 /abc.splice(1, 1, "Dart") => // xóa 1 phần tử từ vị trí 1 và thêm "Dart" vào vị trí 1
-8. .slice(): cắt mảng (tạo ra một mảng mới từ một mảng đã cho)
+8. .slice(): //cắt mảng (tạo ra một mảng mới từ một mảng đã cho)
 /VD: var abc = [1, 2, 3, 4, 5]
 /abc.slice(1, 3) => // cắt từ vị trí 1 đến vị trí 3 (không bao gồm vị trí 3)
-9. .concat(): nối 2 hoặc nhiều mảng lại với nhau và trả về mảng mới
+9. .concat(): //nối 2 hoặc nhiều mảng lại với nhau và trả về mảng mới
 VD: array1.concat(array2)
-
+----------------------------------
 NOTED:
-return [...abc].pop('Elephant'): clone 1 mảng mới và elephant được thêm vào cuối mảng mới
-return abc.at(value): trả về giá trị tại vtri chọn
+return [...abc].pop('Elephant'): //clone 1 mảng mới và elephant được thêm vào cuối mảng mới
+return abc.at(value): //trả về giá trị tại vtri chọn
+----------------------------------
+// Array methods:
+1. .forEach(): //lặp mảng, thực thi 1 hàm callback cho mỗi ptu
+2. .every(): //lặp mảng, trả về true/false (true nếu tất cả ptu thoả mãn đkiện)
+3. .some(): //lặp mảng, trả về true/false  (true nếu ít nhất 1 ptu thoả mãn đkiện)
+4. .map(): //lặp mảng, trả về mảng mới (sau khi áp dụng phép toán, hoặc biến đổi)
+5. .reduce(): //lặp mảng, trả về giá trị duy nhất (tổng, tích,... sau khi kết hợp các ptu lại)
+6. .find(): //lặp mảng, trả về phần tử đầu tiên (thoả mãn đkiện, 'undefined' nếu không tìm thấy)
+7. .filter(): //lặp mảng, trả về mảng mới (chứa tất cả các ptu thoả mãn đkiện)
+8. .findIndex(): //lặp mảng, trả về phần tử đầu tiên (thoả mãn đkiện, '-1' nếu không tìm thấy)
+VD: var abc = [...]
+abc.forEach(function(value, index){/*return...*/})
+
+abc.reduce(function(a, b, c, d){/*return...*/}, initial value)
+/trong đó "a" là "biến tích luỹ" , "b" là "giá trị hiện tại", "c" là "vtri hiện tại", "d" là "mảng hiện tại"
+/ "a":accumulator|"b":currentValue|"c":currentIndex|"d":array|
+NOTE: nếu không đặt initialValue ==>👉 initialValue mặc định sẽ là phần tử đầu tiên của chính mảng .reduce() đang chạy
 --------------
 ---------------------------------------------------
 ---------------------------------------------------
@@ -711,8 +730,272 @@ for (var i = 0; i < arr.length; i++) {
     for (var j = 0; j < arr[i].length; j++) {
         console.log(arr[i][j]);
     }
-} //Ans: 1, 2, 3, 4, 5, 6 
+} //Ans: 1, 2, 3, 4, 5, 6
 */
+/------------------------------------------------------
+Đệ Quy
+//1. Xác định điểm dừng
+//2. Logic handle => Tạo ra điểm dừng
+function countDown(number) {
+    if(number <= 0) {
+        console.log(number);
+        return countDown(number - 1); // Điều kiện dừng lặp
+    }
+    return number;
+}
+
+countDown(10); //Điểm bắt đầu
+
+/-------------------------------------------------------
+-------------------------------
+---------------------------------------
+--------------------------------------------------------------------------
+------------------*********** HTML DOM ***************------------------
+--------------------------------------------------------------------------
+---------------------------------------
+-------------------------------
+document.getElementById("")//ID
+document.getElementsByClassName("")//Class
+document.getElementsByTagName("")//Tag
+document.querySelector("")//CSS selector
+document.querySelectorAll("")//CSS selector
+document.write("")//Ghi nội dung ra màn hình
+document.createElement("")//Tạo ra 1 thẻ HTML
+document.createTextNode("")//Tạo ra 1 node text
+document.appendChild("")//Thêm 1 node con vào node cha
+document.removeChild("")//Xóa 1 node con khỏi node
+//--------------------------------------------
+document.textContent = ''//lấy chữ raw ( bao gồm cả đoạn mã HTML)
+document.innerText = '' //lấy/thêm/thay đổi chữ đã định dạng
+document.setAttribute("")//Thêm attribute vào thẻ HTML
+document.getAttribute("")//Lấy attribute của thẻ HTML
+document.removeAttribute("")//Xóa attribute của thẻ HTML
+document.classList.add("")//Thêm class vào thẻ HTML
+document.classList.remove("")//Xóa class của thẻ HTML
+document.classList.toggle("")//Thêm/xóa class của thẻ HTML
+document.classList.contains("")//Kiểm tra class có tồn tại không
+.innerHTML = ''//Thêm nội dung vào thẻ HTML //thêm đc element node,att node, text node
+.outerHTML = ''//Thay cả element bằng HTML mới
+|--------------
+document.style//Thêm style vào thẻ HTML
+=> VD: var headingElement = document.querySelector('h1');
+        headingElement.style.color = 'red';
+|--------------
+//thêm attribute vào element bằng DOM
+VD: var headingElement = document.querySelector('h1');
+    headingElement.setAttribute('class', 'heading');   headingElement.setAttribute('href', 'heading');
+    headingElement.setAttribute('target', '_blank');
+    headingElement.setAttribute('href', 'https://google.com');
+
+hoặc: var headingElement = document.querySelector('h1');
+      headingElement.className = 'heading'; //thêm class
+      headingElement.title = 'heading'; //thêm title
+      headingElement.href = 'heading'; //thêm href
+      headingElement.target = '_blank'; //thêm target
+      headingElement.href = 'https://google.com'; //thêm href
+
+//Lấy attribute của element bằng DOM
+VD: var headingElement = document.querySelector('h1');
+    headingElement.getAttribute('class'); //lấy class/attribute trong JS/....
+-------------------------------
+---------------------------------------
+--------------------------------------------------------------------------
+------------------*********** DOM EVENTS ***************------------------
+--------------------------------------------------------------------------
+---------------------------------------
+-------------------------------
+NOTED: khi tác động vào 'thẻ con' có ( 'thẻ cha' có 'events' ) thì 'thẻ cha' vẫn bị ảnh | sự kiện nổi bọt
+
+/e.target : lấy ra chính element bị tác động => console.log(e.target)
+/e.which : lấy ra mã của phím được nhấn
+
+/thêm "on" đằng trước | => onclick="" (trong thẻ HTML)
+| => e.onclick = function() {this.style.color ="red"} (trong JS)
+
+//Thường dùng
+click
+drag
+focus
+keydown
+keyup
+mouseover
+mouseout
+mouseup
+mousedown
+scroll
+input
+change
+--------------
+preventDefault(): loại bỏ hành vi mặc định của web
+stopPropagation(): loại bỏ sự kiện nổi bọt
+VD: var ulE = document.querySelector('ul');
+
+    ulE.onmousedown = function(e) {
+        e.preventDefault();
+    }
+
+VD2: var aE = document.querySelector('a');
+
+    aE.onclick = function(e) {
+        e.preventDefault();
+    }
+
+--------------
+//example
+VD: var inputE = document.querySelector('input[type="text"]');
+
+    inputE.oninput = function(e) {
+        console.log(e.target.value);
+    }
+    ------------
+VD2: var inputE = document.querySelector('input[type="checkbox"]');
+
+    inputE.onchange = function(e) {
+        console.log(e.target.checked);
+    }
+-------------------------------
+---------------------------------------
+----------------------------------------------------------------
+------------------*********** EVENT LISTENER ***************------------------
+----------------------------------------------------------------
+---------------------------------------
+-------------------------------
+VD: var btn = document.getElementById('btn');
+
+    btn.addEventListener('a', function(e) {}) //a là đối số, sự kiện mà mình muốn nó lắng nghe. VD: a: 'click'
+    -------------------------------------------
+    btn.removeEventListener('a', function(e) {})
+-------------------------------
+---------------------------------------
+-------------------------------------------------------------
+------------------*********** TIMER ***************------------------
+-------------------------------------------------------------
+---------------------------------------
+-------------------------------
+.setTimeout(function() {}, 1000) //thực hiện 1 function sau 1 khoảng thời gian
+.clearTimeout(timeoutID) //dừng thực hiện function
+.setInterval(function() {}, 1000) //thực hiện 1 function liên tục sau 1 khoảng thời gian
+.clearInterval(intervalID) //dừng thực hiện function liên tục
+-------------------------------
+---------------------------------------
+-------------------------------------------------------------
+------------------*********** JSON ***************------------------
+-------------------------------------------------------------
+---------------------------------------
+-------------------------------
+JSON.stringify() /*chuyển đổi từ JS sang JSON*/ |Mã hoá - encode
+JSON.parse() /*chuyển đổi từ JSON sang JS*/ |Giải mã - decode
+|JSON luôn là 1 string, VD: '{"name": "Ha An", "age": 18}'
+-------------------------------
+---------------------------------------
+-------------------------------------------------------------
+------------------*********** Promise ***************------------------
+-------------------------------------------------------------
+---------------------------------------
+-------------------------------
+||Promise - Sync, Async /đồng bộ - bất đồng bộ
+||Promise - Hell
+||Promise - concept
+-------
+|VD: var promise = new Promise(
+    //Executor
+    function(resolve, reject) {
+        //Logic
+        //Thành công: resolve()
+        //Thất bại: reject()
+        resolve(); or reject();
+    }
+);
+-------------------------
+promise
+    .then(function() {                |||//có thể có nhiều .then()
+        //resolve()
+    })
+    .catch(function() {  //bắt lỗi -> khi thất bại -> báo lỗi
+        //reject()
+    })
+    .finally(function() {
+        //finally()
+    });
+--------------------------
+|| Promise - chain
+//tính chất lồng nhau
+--------------------------
+VD: function sleep(ms) {
+    return new Promise(function(resolve) {
+        setTimeout(resolve, ms);
+    });
+}
+
+sleep(1000)
+    .then(function() {
+        console.log(1);
+        return sleep(1000); //return 1 promise nữa
+    })
+    .then(function() {
+        console.log(2);
+        return sleep(1000);
+    })
+    .then(function() {
+        console.log(3);
+        return sleep(1000);
+    })
+    .then(function() {
+        console.log(4);
+        return sleep(1000);
+    })
+------------------------
+|| Promise - methods (resolve, reject, all)
+ Promise.resolve() //thành công
+ Promise.reject() //thất bại
+ Promise.all() //chạy song song
+ VD: var promise1 = new Promise(function(resolve) {
+    setTimeout(function() {
+        resolve([1]);
+    }, 2000);
+});
+    var promise2 = new Promise(function(resolve) {
+    setTimeout(function() {
+        resolve([2, 3]);
+    }, 5000);
+});
+    Promise.all([promise1, promise2]) //chạy song song
+    .then(function([result1, result2]) {
+        console.log(result1.concat(result2));
+    });
+-------------------------------
+-------------------------------
+---------------------------------------
+-------------------------------------------------------------
+------------------*********** FETCH - API ***************------------------ Application Programming Interface: Cổng giao tiếp giữa các phần mềm (URL)
+-------------------------------------------------------------
+---------------------------------------
+-------------------------------
+VD: var postApi = 'https://jsonplaceholder.typicode.com/posts';
 
 
-
+fetch(postApi)
+    .then(function(response) {
+        return response.json();
+        //JSON.parse: JSON -> Javascript
+    })
+    .then(function(posts) {
+        var html = posts.map(function(post) {
+            return `<li>
+                <h2>${post.title}</h2>
+                <p>${post.body}</p>
+            </li>`;
+        });
+        document.getElementById('post-block').innerHTML = html.join('');
+    })
+    .catch(function(err) {
+        console.log('Có lỗi:', err);
+    });
+------------------
+||| - JSON server - Fake API / Mock API
+    npm install -g json-server //-g: global (toàn cục)
+|CRUD
+    - Create: Tạo mới -> POST
+    - Read: Lấy dữ liệu -> GET
+    - Update: Chỉnh sửa -> PUT (sửa toàn bộ) / PATCH (sửa/vá 1 phần)
+    - Delete: Xóa -> DELETE
